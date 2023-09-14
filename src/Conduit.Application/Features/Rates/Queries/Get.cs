@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using Conduit.Application.Features.Articles.Queries;
 using Conduit.Application.Features.Rates.Queries;
 using Conduit.Domain.Entities;
 
@@ -13,6 +15,7 @@ public class RateDto
     public int Rateing { get; set; }
 }
 
+public record SingleRateResponse(RateDto Rate);
 public static class RateMapper
 {
     public static RateDto Map(this Rate rate, User? currentUser)
